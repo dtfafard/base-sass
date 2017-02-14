@@ -1,0 +1,32 @@
+Dtf\General\SassBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SassBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 100
+        passwordHash:
+            type: string
+            length: 100
+            column: password_hash
+        passwordSalt:
+            type: string
+            length: 100
+            column: password_salt
+        status:
+            type: integer
+        email:
+            type: string
+            length: 254
+        created_time:
+            type: integer
+        update_time:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+Dtf\General\SassBundle\Entity\TelephoneType:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SassBundle\Repository\TelephoneTypeRepository
+    id:
+        id:
+            type: smallint
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 30
+    lifecycleCallbacks: {  }
