@@ -2,11 +2,15 @@
 
 namespace Dtf\General\SassBundle\Entity;
 
+use Dtf\General\SassBundle\Core\{StatusInterface, hasStatusTrait, hasLogMetaData};
+
 /**
  * User
  */
-class User
+class User implements StatusInterface
 {
+    use hasStatusTrait, hasLogMetaData;
+
     /**
      * @var int
      */
@@ -28,24 +32,9 @@ class User
     private $passwordSalt;
 
     /**
-     * @var int
-     */
-    private $status;
-
-    /**
      * @var string
      */
     private $email;
-
-    /**
-     * @var int
-     */
-    private $created_time;
-
-    /**
-     * @var int
-     */
-    private $update_time;
 
     /**
      * Get id
@@ -132,31 +121,6 @@ class User
     }
 
     /**
-     * Set status
-     *
-     * @param integer $status
-     *
-     * @return User
-     * @throws TypeError
-     */
-    public function setStatus(int $status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return int
-     */
-    public function getStatus() : int
-    {
-        return $this->status;
-    }
-
-    /**
      * Set email
      *
      * @param string $email
@@ -179,56 +143,6 @@ class User
     public function getEmail() : string
     {
         return $this->email;
-    }
-
-    /**
-     * Set createdTime
-     *
-     * @param integer $createdTime
-     *
-     * @return User
-     * @throws TypeError
-     */
-    public function setCreatedTime(int $createdTime)
-    {
-        $this->created_time = $createdTime;
-
-        return $this;
-    }
-
-    /**
-     * Get createdTime
-     *
-     * @return integer
-     */
-    public function getCreatedTime() : int
-    {
-        return $this->created_time;
-    }
-
-    /**
-     * Set updateTime
-     *
-     * @param integer $updateTime   The unix timestamp of the update time
-     *
-     * @return User
-     * @throws TypeError
-     */
-    public function setUpdateTime($updateTime)
-    {
-        $this->update_time = $updateTime;
-
-        return $this;
-    }
-
-    /**
-     * Get updateTime
-     *
-     * @return integer  the unix timestamp of the last update
-     */
-    public function getUpdateTime() : int
-    {
-        return $this->update_time;
     }
 
     /**

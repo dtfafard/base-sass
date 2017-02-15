@@ -2,11 +2,58 @@
 
 namespace Dtf\General\SassBundle\Entity;
 
+use Dtf\General\SassBundle\Core\{StatusInterface, hasStatusTrait, isHierarchicalTrait, hasLogMetaData};
+
 /**
- * Description of Account
- *
- * @author psyk3hoe
+ * Account
  */
-class Account {
-    //put your code here
+class Account implements StatusInterface
+{
+    use hasStatusTrait, isHierarchicalTrait, hasLogMetaData;
+
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId() : int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Account
+     */
+    public function setDescription(string $description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription() : string
+    {
+        return $this->description;
+    }
 }
+

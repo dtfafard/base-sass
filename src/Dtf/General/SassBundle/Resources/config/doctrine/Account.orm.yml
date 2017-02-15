@@ -1,7 +1,7 @@
-Dtf\General\SassBundle\Entity\User:
+Dtf\General\SassBundle\Entity\Account:
     type: entity
     table: null
-    repositoryClass: Dtf\General\SassBundle\Repository\UserRepository
+    repositoryClass: Dtf\General\SassBundle\Repository\AccountRepository
     id:
         id:
             type: integer
@@ -9,22 +9,11 @@ Dtf\General\SassBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-        username:
-            type: string
-            length: 100
-        passwordHash:
-            type: string
-            length: 100
-            column: password_hash
-        passwordSalt:
-            type: string
-            length: 100
-            column: password_salt
-        status:
-            type: integer
-        email:
+        description:
             type: string
             length: 254
+        status:
+            type: integer
         createTime:
             type: integer
             column: create_time
@@ -37,4 +26,13 @@ Dtf\General\SassBundle\Entity\User:
         updateUserId:
             type: integer
             column: update_user_id
+        parentId:
+            type: integer
+            column: parent_id
+        hierarchyLeft:
+            type: integer
+            column: hierarchy_left
+        hierarchyRight:
+            type: integer
+            column: hierarchy_right
     lifecycleCallbacks: {  }

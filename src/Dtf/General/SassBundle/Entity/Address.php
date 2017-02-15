@@ -87,7 +87,7 @@ class Address
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription() : string
     {
         return $this->description;
     }
@@ -112,7 +112,7 @@ class Address
      *
      * @return string
      */
-    public function getLine1()
+    public function getLine1() : string
     {
         return $this->line1;
     }
@@ -137,7 +137,7 @@ class Address
      *
      * @return string
      */
-    public function getLine2()
+    public function getLine2() : string
     {
         return $this->line2;
     }
@@ -162,7 +162,7 @@ class Address
      *
      * @return string
      */
-    public function getLine3()
+    public function getLine3() : string
     {
         return $this->line3;
     }
@@ -187,7 +187,7 @@ class Address
      *
      * @return string
      */
-    public function getPostCode()
+    public function getPostCode() : string
     {
         return $this->postCode;
     }
@@ -212,7 +212,7 @@ class Address
      *
      * @return string
      */
-    public function getCity()
+    public function getCity() : string
     {
         return $this->city;
     }
@@ -237,7 +237,7 @@ class Address
      *
      * @return string
      */
-    public function getRegion()
+    public function getRegion() : string
     {
         return $this->region;
     }
@@ -262,7 +262,7 @@ class Address
      *
      * @return int
      */
-    public function getCountryId()
+    public function getCountryId() : int
     {
         return $this->countryId;
     }
@@ -287,7 +287,7 @@ class Address
      *
      * @return string
      */
-    public function getDetails()
+    public function getDetails() : string
     {
         return $this->details;
     }
