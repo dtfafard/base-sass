@@ -10,4 +10,5 @@ namespace Dtf\General\SassBundle\Repository;
  */
 class AccountRepository extends \Doctrine\ORM\EntityRepository
 {
+    use LogMetaDataRepositoryTrait, StatusRepositoryTrait;
 }

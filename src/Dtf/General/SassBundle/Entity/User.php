@@ -2,7 +2,8 @@
 
 namespace Dtf\General\SassBundle\Entity;
 
-use Dtf\General\SassBundle\Core\{StatusInterface, hasStatusTrait, hasLogMetaData};
+use Dtf\General\SassBundle\Core\{hasLogMetaData};
+use Dtf\General\SassBundle\Core\Status\{StatusInterface, hasStatusTrait};
 
 /**
  * User

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab5bab5402467cab4ea9807ee57575ba",
+    "content-hash": "4adad229d402f64b37e58909edc291f2",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -952,6 +952,57 @@
                 "psr-3"
             ],
             "time": "2016-11-26T00:15:39+00:00"
+        },
+        {
+            "name": "okapon/doctrine-set-type-bundle",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/okapon/DoctrineSetTypeBundle.git",
+                "reference": "5751375e9f8c6f33e310e4a6c7829a41b2b2b776"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/okapon/DoctrineSetTypeBundle/zipball/5751375e9f8c6f33e310e4a6c7829a41b2b2b776",
+                "reference": "5751375e9f8c6f33e310e4a6c7829a41b2b2b776",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.3",
+                "php": ">=5.5.0",
+                "symfony/symfony": "~2.6|~3.0"
+            },
+            "require-dev": {
+                "phake/phake": ">=2.0.0@dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Okapon\\DoctrineSetTypeBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yuichi Okada",
+                    "email": "yuuichi177@gmail.com"
+                }
+            ],
+            "description": "Provides support of MySQL SET type for Doctrine2 in Symfony2 applications.",
+            "homepage": "https://github.com/okapon/DoctrineSetTypeBundle",
+            "keywords": [
+                "bundle",
+                "dbal",
+                "doctrine",
+                "mysql",
+                "set",
+                "symfony",
+                "type"
+            ],
+            "time": "2017-01-29T07:09:58+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2094,8 +2145,5 @@
     "platform": {
         "php": ">=5.5.9"
     },
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "5.5.9"
-    }
+    "platform-dev": []
 }

@@ -1,0 +1,6 @@
+doctrine:
+    dbal:
+        mapping_types:
+            set: string
+        types:
+            UserGroupType: Dtf\General\SassBundle\Core\AccessControllPermissionLevels

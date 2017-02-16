@@ -1,0 +1,29 @@
+Dtf\General\SassBundle\Entity\Role:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SassBundle\Repository\RoleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 254
+        status:
+            type: integer
+        createTime:
+            type: integer
+            column: create_time
+        updateTime:
+            type: integer
+            column: update_time
+        createUserId:
+            type: integer
+            column: create_user_id
+        updateUserId:
+            type: integer
+            column: update_user_id
+    lifecycleCallbacks: {  }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dtf\General\SassBundle\Core;
+namespace Dtf\General\SassBundle\Core\Status;
 
 /**
  * Contains the core code for the hasStatusTrait
