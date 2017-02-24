@@ -2,11 +2,16 @@
 
 namespace Dtf\General\SassBundle\Entity;
 
+use Dtf\General\SassBundle\Core\{hasLogMetaData};
+use Dtf\General\SassBundle\Core\AccessControl\PermissionLevels;
+
 /**
  * AccessControl
  */
 class AccessControl
 {
+    use hasLogMetaData;
+
     /**
      * @var int
      */
@@ -53,27 +58,6 @@ class AccessControl
     private $userId;
 
     /**
-     * @var int
-     */
-    private $createUserId;
-
-    /**
-     * @var int
-     */
-    private $updateUserId;
-
-    /**
-     * @var int
-     */
-    private $createTime;
-
-    /**
-     * @var int
-     */
-    private $updateTime;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -89,8 +73,9 @@ class AccessControl
      * @param integer $modelId
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setModelId($modelId)
+    public function setModelId(int $modelId)
     {
         $this->modelId = $modelId;
 
@@ -102,7 +87,7 @@ class AccessControl
      *
      * @return int
      */
-    public function getModelId()
+    public function getModelId() : int
     {
         return $this->modelId;
     }
@@ -113,6 +98,7 @@ class AccessControl
      * @param string $modelClass
      *
      * @return AccessControl
+     * @throws TypeError
      */
     public function setModelClass($modelClass)
     {
@@ -126,7 +112,7 @@ class AccessControl
      *
      * @return string
      */
-    public function getModelClass()
+    public function getModelClass() : string
     {
         return $this->modelClass;
     }
@@ -137,8 +123,9 @@ class AccessControl
      * @param \Dtf\General\SassBundle\Core\AccessControl\PermissionLevels $permissionLevels
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setPermissionLevels(\Dtf\General\SassBundle\Core\AccessControl\PermissionLevels $permissionLevels)
+    public function setPermissionLevels(PermissionLevels $permissionLevels)
     {
         $this->permissionLevels = $permissionLevels;
 
@@ -150,7 +137,7 @@ class AccessControl
      *
      * @return \Dtf\General\SassBundle\Core\AccessControl\PermissionLevels
      */
-    public function getPermissionLevels()
+    public function getPermissionLevels() : PermissionLevels
     {
         return $this->permissionLevels;
     }
@@ -161,8 +148,9 @@ class AccessControl
      * @param boolean $everyone
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setEveryone($everyone)
+    public function setEveryone(bool $everyone)
     {
         $this->everyone = $everyone;
 
@@ -174,7 +162,7 @@ class AccessControl
      *
      * @return bool
      */
-    public function getEveryone()
+    public function getEveryone() : bool
     {
         return $this->everyone;
     }
@@ -185,8 +173,9 @@ class AccessControl
      * @param integer $accountId
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setAccountId($accountId)
+    public function setAccountId(int $accountId)
     {
         $this->accountId = $accountId;
 
@@ -198,7 +187,7 @@ class AccessControl
      *
      * @return int
      */
-    public function getAccountId()
+    public function getAccountId() : int
     {
         return $this->accountId;
     }
@@ -209,8 +198,9 @@ class AccessControl
      * @param boolean $propagateToSubAccounts
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setPropagateToSubAccounts($propagateToSubAccounts)
+    public function setPropagateToSubAccounts(bool $propagateToSubAccounts)
     {
         $this->propagateToSubAccounts = $propagateToSubAccounts;
 
@@ -222,7 +212,7 @@ class AccessControl
      *
      * @return bool
      */
-    public function getPropagateToSubAccounts()
+    public function getPropagateToSubAccounts() : bool
     {
         return $this->propagateToSubAccounts;
     }
@@ -233,6 +223,7 @@ class AccessControl
      * @param integer $roleId
      *
      * @return AccessControl
+     * @throws TypeError
      */
     public function setRoleId($roleId)
     {
@@ -246,7 +237,7 @@ class AccessControl
      *
      * @return int
      */
-    public function getRoleId()
+    public function getRoleId() : int
     {
         return $this->roleId;
     }
@@ -257,8 +248,9 @@ class AccessControl
      * @param integer $userId
      *
      * @return AccessControl
+     * @throws TypeError
      */
-    public function setUserId($userId)
+    public function setUserId(int $userId)
     {
         $this->userId = $userId;
 
@@ -270,105 +262,9 @@ class AccessControl
      *
      * @return int
      */
-    public function getUserId()
+    public function getUserId() : int
     {
         return $this->userId;
-    }
-
-    /**
-     * Set createUserId
-     *
-     * @param integer $createUserId
-     *
-     * @return AccessControl
-     */
-    public function setCreateUserId($createUserId)
-    {
-        $this->createUserId = $createUserId;
-
-        return $this;
-    }
-
-    /**
-     * Get createUserId
-     *
-     * @return int
-     */
-    public function getCreateUserId()
-    {
-        return $this->createUserId;
-    }
-
-    /**
-     * Set updateUserId
-     *
-     * @param integer $updateUserId
-     *
-     * @return AccessControl
-     */
-    public function setUpdateUserId($updateUserId)
-    {
-        $this->updateUserId = $updateUserId;
-
-        return $this;
-    }
-
-    /**
-     * Get updateUserId
-     *
-     * @return int
-     */
-    public function getUpdateUserId()
-    {
-        return $this->updateUserId;
-    }
-
-    /**
-     * Set createTime
-     *
-     * @param integer $createTime
-     *
-     * @return AccessControl
-     */
-    public function setCreateTime($createTime)
-    {
-        $this->createTime = $createTime;
-
-        return $this;
-    }
-
-    /**
-     * Get createTime
-     *
-     * @return int
-     */
-    public function getCreateTime()
-    {
-        return $this->createTime;
-    }
-
-    /**
-     * Set updateTime
-     *
-     * @param integer $updateTime
-     *
-     * @return AccessControl
-     */
-    public function setUpdateTime($updateTime)
-    {
-        $this->updateTime = $updateTime;
-
-        return $this;
-    }
-
-    /**
-     * Get updateTime
-     *
-     * @return int
-     */
-    public function getUpdateTime()
-    {
-        return $this->updateTime;
     }
 }
 

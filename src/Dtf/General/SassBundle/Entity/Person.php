@@ -7,7 +7,8 @@ namespace Dtf\General\SassBundle\Entity;
  *
  * @author psyk3hoe
  */
-class Person {
+class Person
+{
     protected $firstName;
     protected $middleName;
     protected $lastName;
@@ -21,108 +22,124 @@ class Person {
     protected $ethnicity;
     protected $gender;
     protected $picture;
-    
-    public function getFirstName() : string {
+
+    public function getFirstName(): string
+    {
         return $this->firstName;
     }
 
-    public function getMiddleName() : string {
+    public function getMiddleName(): string
+    {
         return $this->middleName;
     }
 
-    public function getLastName() : string {
+    public function getLastName(): string
+    {
         return $this->lastName;
     }
 
-    public function getHairColor() : string {
+    public function getHairColor(): string
+    {
         return $this->hairColor;
     }
 
-    public function getEyeColor() : string {
+    public function getEyeColor(): string
+    {
         return $this->eyeColor;
     }
 
-    public function getHeight() : float {
+    public function getHeight(): float
+    {
         return $this->height;
     }
-    
-    public function getHeightUnit() : string {
+
+    public function getHeightUnit(): string
+    {
         return $this->heightUnit;
     }
-    
-    public function getWeight() : float {
+
+    public function getWeight(): float
+    {
         return $this->weight;
     }
-    
-    public function getWeightUnit() : string {
+
+    public function getWeightUnit(): string
+    {
         return $this->weightUnit;
     }
-    
-    public function getDateOfBirth() : DateTime {
+
+    public function getDateOfBirth(): DateTime
+    {
         return $this->dateOfBirth;
     }
 
-    public function getEthnicity() : string {
+    public function getEthnicity(): string
+    {
         return $this->ethnicity;
     }
 
-    public function getGender() : string {
+    public function getGender(): string
+    {
         return $this->gender;
     }
-    
-    public function getPicture() {
-        return $this->picture;
-    }
 
-    public function setFirstName($firstName) {
+    public function setFirstName(string $firstName)
+    {
         $this->firstName = $firstName;
     }
 
-    public function setMiddleName($middleName) {
+    public function setMiddleName(string $middleName)
+    {
         $this->middleName = $middleName;
     }
 
-    public function setLastName($lastName) {
+    public function setLastName(string $lastName)
+    {
         $this->lastName = $lastName;
     }
 
-    public function setHairColor($hairColor) {
+    public function setHairColor(string $hairColor)
+    {
         $this->hairColor = $hairColor;
     }
 
-    public function setEyeColor($eyeColor) {
+    public function setEyeColor(string $eyeColor)
+    {
         $this->eyeColor = $eyeColor;
     }
 
-    public function setHeight($height) {
+    public function setHeight($height)
+    {
         $this->height = $height;
     }
 
-    public function setHeightUnit($heightUnit) {
+    public function setHeightUnit(string $heightUnit)
+    {
         $this->heightUnit = $heightUnit;
     }
 
-    public function setWeight($weight) {
+    public function setWeight($weight)
+    {
         $this->weight = $weight;
     }
 
-    public function setWeightUnit($weightUnit) {
+    public function setWeightUnit(string $weightUnit)
+    {
         $this->weightUnit = $weightUnit;
     }
 
-    public function setDateOfBirth($dateOfBirth) {
+    public function setDateOfBirth($dateOfBirth)
+    {
         $this->dateOfBirth = $dateOfBirth;
     }
 
-    public function setEthnicity($ethnicity) {
+    public function setEthnicity(string $ethnicity)
+    {
         $this->ethnicity = $ethnicity;
     }
 
-    public function setGender($gender) {
+    public function setGender(string $gender)
+    {
         $this->gender = $gender;
-    }
-    
-    public function setPicture($picture) {
-        $this->picture = $picture;
     }
 }

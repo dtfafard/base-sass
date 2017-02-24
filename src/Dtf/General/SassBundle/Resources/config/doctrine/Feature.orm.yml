@@ -1,0 +1,27 @@
+Dtf\General\SassBundle\Entity\Feature:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SassBundle\Repository\FeatureRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 100
+        description:
+            type: string
+            length: 254
+        parentId:
+            type: integer
+            column: parent_id
+        hierarchyLeft:
+            type: integer
+            column: hierarchy_left
+        hierarchyRight:
+            type: integer
+            column: hierarchy_right
+    lifecycleCallbacks: {  }

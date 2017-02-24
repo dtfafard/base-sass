@@ -73,6 +73,23 @@ class User implements StatusInterface
     }
 
     /**
+     * Set password hash for symfony's entity builder
+     *
+     * @param string $passwordHash
+     *
+     * @return User
+     * @throws TypeError
+     * @deprecated  This function should only be used automatically by Symfony's
+     *              entity builder
+     */
+    public function setPasswordHash(string $passwordHash)
+    {
+        $this->passwordHash = $passwordHash;
+
+        return $this;
+    }
+
+    /**
      * Set password
      *
      * @param string $password
@@ -101,8 +118,24 @@ class User implements StatusInterface
     /**
      * Sets the passwordSalt
      *
+     * @param string $passwordSalt
+     * @return User
+     * @throws TypeError
+     * @deprecated
      */
-    final private function setPasswordSalt()
+    public function setPasswordSalt(string $passwordSalt)
+    {
+        $this->passwordSalt = $passwordSalt;
+
+        return $this;
+    }
+
+    /**
+     * Creates the password salt according to the recommendations on user
+     * password handling and encrypting
+     * 
+     */
+    private function createPasswordSalt()
     {
         $this->passwordSalt = mcrypt_create_iv(100);
     }
@@ -115,7 +148,7 @@ class User implements StatusInterface
     final private function getPasswordSalt() : string
     {
         if (sizeof($this->passwordSalt) != 100) {
-            $this->setPasswordSalt();
+            $this->createPasswordSalt();
         }
 
         return $this->passwordSalt;
