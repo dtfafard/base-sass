@@ -1,0 +1,17 @@
+Dtf\General\SaasBundle\Entity\Telephone:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SaasBundle\Repository\TelephoneRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        typeId:
+            type: smallint
+        number:
+            type: string
+            length: 30
+    lifecycleCallbacks: {  }

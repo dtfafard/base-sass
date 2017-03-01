@@ -1,0 +1,4 @@
+services:
+#    dtf_general_contact_management.example:
+#        class: Dtf\General\ContactManagementBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,38 @@
+Dtf\General\SaasBundle\Entity\Account:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SaasBundle\Repository\AccountRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: string
+            length: 254
+        status:
+            type: integer
+        createTime:
+            type: integer
+            column: create_time
+        updateTime:
+            type: integer
+            column: update_time
+        createUserId:
+            type: integer
+            column: create_user_id
+        updateUserId:
+            type: integer
+            column: update_user_id
+        parentId:
+            type: integer
+            column: parent_id
+        hierarchyLeft:
+            type: integer
+            column: hierarchy_left
+        hierarchyRight:
+            type: integer
+            column: hierarchy_right
+    lifecycleCallbacks: {  }

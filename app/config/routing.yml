@@ -1,5 +1,15 @@
+dtf_general_contact_management:
+    resource: "@DtfGeneralContactManagementBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+dtf_general_user_management:
+    resource: "@DtfGeneralUserManagementBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 sass:
-    resource: "@SassBundle/Resources/config/routing.yml"
+    resource: "@SaasBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:

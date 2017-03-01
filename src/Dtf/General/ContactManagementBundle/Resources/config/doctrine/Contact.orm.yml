@@ -1,0 +1,18 @@
+Dtf\General\SaasBundle\Entity\Contact:
+    type: entity
+    table: null
+    repositoryClass: Dtf\General\SaasBundle\Repository\ContactRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        email:
+            type: string
+            length: 254
+        website:
+            type: string
+            length: 1000
+    lifecycleCallbacks: {  }

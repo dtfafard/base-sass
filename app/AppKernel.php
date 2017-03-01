@@ -16,8 +16,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            new Dtf\General\SassBundle\SassBundle(),
+            new Dtf\General\SaasBundle\SaasBundle(),
             new Okapon\DoctrineSetTypeBundle\OkaponDoctrineSetTypeBundle(),
+            new Dtf\General\UserManagementBundle\DtfGeneralUserManagementBundle(),
+            new Dtf\General\ContactManagementBundle\DtfGeneralContactManagementBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
