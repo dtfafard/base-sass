@@ -2,16 +2,32 @@
 
 namespace Dtf\General\UserManagementBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Dtf\General\SaasBundle\Core\Controller\DtfController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class DefaultController extends DtfController
 {
+    const DEFAULT_VIEW_FOLDER = 'UserManagementBundle:Default:';
+
+    protected function getDefaultViewFolder()
+    {
+        return self::DEFAULT_VIEW_FOLDER;
+    }
+
     /**
      * @Route("/")
      */
     public function indexAction()
     {
-        return $this->render('DtfGeneralUserManagementBundle:Default:index.html.twig');
+        return $this->render('index');
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function loginAction()
+    {
+        return $this->render('login');
     }
 }

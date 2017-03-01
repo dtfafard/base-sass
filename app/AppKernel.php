@@ -16,10 +16,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            new Dtf\General\SaasBundle\SaasBundle(),
             new Okapon\DoctrineSetTypeBundle\OkaponDoctrineSetTypeBundle(),
-            new Dtf\General\UserManagementBundle\DtfGeneralUserManagementBundle(),
-            new Dtf\General\ContactManagementBundle\DtfGeneralContactManagementBundle(),
+            new Dtf\General\SaasBundle\SaasBundle(),
+            new Dtf\General\UserManagementBundle\UserManagementBundle(),
+            new Dtf\General\ContactManagementBundle\ContactManagementBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
