@@ -1,6 +1,6 @@
 <?php
 
-namespace Dtf\General\SaasBundle\Entity;
+namespace Dtf\General\UserManagementBundle\Entity;
 
 use Dtf\General\SaasBundle\Core\{hasLogMetaData};
 use Dtf\General\SaasBundle\Core\Status\{StatusInterface, hasStatusTrait};
