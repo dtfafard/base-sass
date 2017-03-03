@@ -5,6 +5,9 @@ namespace Dtf\General\UserManagementBundle\Entity;
 use Dtf\General\SaasBundle\Core\{hasLogMetaData};
 use Dtf\General\SaasBundle\Core\Status\{StatusInterface, hasStatusTrait};
 
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * User
  */
@@ -205,4 +208,34 @@ class User implements StatusInterface
 
         return $concatenated;
     }
+
+    /**
+     * Loads the Username validator metadata when required
+     *
+     * @param ClassMetadata $metadata
+     */
+    public static function loadUsernameValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('username', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('username', new Assert\Regex([
+            'pattern' => '/^\w+$/',
+            'message' => 'The username can only be composed of alphanumeric characters and underscores'
+        ]));
+    }
+
+    /**
+     * Loads the Email validator metadata when required
+     *
+     * @param ClassMetadata $metadata
+     */
+    public static function loadEmailValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('email', new Assert\Email([
+            'message' => 'The email "{{ value }}" is not a valid email.',
+            'checkMX' => true,
+        ]));
+        $metadata->addPropertyConstraint('email', new Assert\NotBlank());
+    }
+
+
 }

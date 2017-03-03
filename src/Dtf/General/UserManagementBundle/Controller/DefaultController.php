@@ -3,14 +3,14 @@
 namespace Dtf\General\UserManagementBundle\Controller;
 
 use Dtf\General\SaasBundle\Core\Controller\DtfController;
-use Dtf\General\UserManagementBundle\Form\{Login, SignUp, ResetPassword};
+use Dtf\General\UserManagementBundle\Entity\Form\{Login, SignUp, ResetPassword};
 use Symfony\Component\Form\Extension\Core\Type\{
     PasswordType,
     TextType,
     SubmitType
 };
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * User Management Default Controller
@@ -49,7 +49,7 @@ class DefaultController extends DtfController
         $form = $this->createFormBuilder($login)
             ->add('username', TextType::class)
             ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Sign In'))
+            ->add('save', SubmitType::class, ['label' => 'Sign In'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -78,10 +78,10 @@ class DefaultController extends DtfController
         $resetPassword = new ResetPassword();
 
         $form = $this->createFormBuilder($resetPassword)
-            ->add('current_password', PasswordType::class)
+            ->add('password', PasswordType::class, ['label' => 'Current Password'])
             ->add('new_password', PasswordType::class)
             ->add('repeat_new_password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Reset'))
+            ->add('save', SubmitType::class, ['label' => 'Reset'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -107,19 +107,19 @@ class DefaultController extends DtfController
     public function signUpAction(Request $request)
     {
         // create a task and give it some dummy data for this example
-        $signUp = new SignUp();
+        $login = new SignUp();
 
-        $form = $this->createFormBuilder($signUp)
+        $form = $this->createFormBuilder($login)
             ->add('username', TextType::class)
             ->add('email', TextType::class)
             ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Sign Up'))
+            ->add('save', SubmitType::class, ['label' => 'Sign Up'])
             ->getForm();
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $signUp = $form->getData();
+            $login = $form->getData();
 
             /**
              * @todo    Code to reset the user's password
@@ -127,7 +127,7 @@ class DefaultController extends DtfController
             return $this->redirectToRoute('sass_homepage');
         }
 
-        return $this->render('signup', [
+        return $this->render('login', [
             'form' => $form->createView(),
         ]);
     }
