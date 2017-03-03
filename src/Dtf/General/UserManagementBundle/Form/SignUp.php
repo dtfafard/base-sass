@@ -2,12 +2,15 @@
 
 namespace Dtf\General\UserManagementBundle\Form;
 
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
- * Description of LoginForm
+ * SignUpForm
  *
  * @author psyk3hoe
  */
-class Login
+class SignUp
 {
     /**
      *
@@ -16,6 +19,13 @@ class Login
     protected $username;
 
     /**
+     *
+     * @var string
+     */
+    protected $email;
+
+    /**
+     * @Assert\NotBlank()
      *
      * @var string
      */
@@ -28,6 +38,15 @@ class Login
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     /**
@@ -51,6 +70,16 @@ class Login
 
     /**
      *
+     * @param string $email
+     * @throws TypeError
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     *
      * @param string $password
      * @throws TypeError
      */
@@ -66,7 +95,15 @@ class Login
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         //Validation done in PHP for error message translations
+        $metadata->addPropertyConstraint('email', new Assert\Email([
+            'message' => 'The email "{{ value }}" is not a valid email.',
+            'checkMX' => true,
+        ]));
+        $metadata->addPropertyConstraint('email', new Assert\NotBlank());
         $metadata->addPropertyConstraint('username', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('username', new Assert\Regex([
+            'pattern' => '/^\w+$/',
+        ]));
         $metadata->addPropertyConstraint('password', new Assert\NotBlank());
     }
 }

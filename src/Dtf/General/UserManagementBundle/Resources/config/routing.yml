@@ -1,3 +1,9 @@
 user_management_login:
     path:     /login
     defaults: { _controller: UserManagementBundle:Default:login }
+user_management_reset_password:
+    path:     /reset-password
+    defaults: { _controller: UserManagementBundle:Default:resetPassword }
+user_management_signup:
+    path:     /signup
+    defaults: { _controller: UserManagementBundle:Default:signUp }
