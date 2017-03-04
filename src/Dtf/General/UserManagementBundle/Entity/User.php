@@ -2,7 +2,6 @@
 
 namespace Dtf\General\UserManagementBundle\Entity;
 
-use Dtf\General\SaasBundle\Core\{hasLogMetaData};
 use Dtf\General\SaasBundle\Core\Status\{StatusInterface, hasStatusTrait};
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
@@ -13,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements StatusInterface
 {
-    use hasStatusTrait, hasLogMetaData;
+    use hasStatusTrait;
 
     /**
      * @var int
@@ -113,7 +112,7 @@ class User implements StatusInterface
      *
      * @return string
      */
-    public function getPasswordHash() : string
+    public function getPasswordHash()
     {
         return $this->passwordHash;
     }
@@ -148,7 +147,7 @@ class User implements StatusInterface
      *
      * @return string
      */
-    final private function getPasswordSalt() : string
+    final private function getPasswordSalt()
     {
         if (sizeof($this->passwordSalt) != 100) {
             $this->createPasswordSalt();
@@ -177,7 +176,7 @@ class User implements StatusInterface
      *
      * @return string
      */
-    public function getEmail() : string
+    public function getEmail()
     {
         return $this->email;
     }

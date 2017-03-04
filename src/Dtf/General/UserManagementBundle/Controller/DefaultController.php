@@ -80,7 +80,7 @@ class DefaultController extends DtfController
         $form = $this->createFormBuilder($resetPassword)
             ->add('password', PasswordType::class, ['label' => 'Current Password'])
             ->add('new_password', PasswordType::class)
-            ->add('repeat_new_password', PasswordType::class)
+            ->add('repeat_password', PasswordType::class)
             ->add('save', SubmitType::class, ['label' => 'Reset'])
             ->getForm();
 
@@ -113,6 +113,7 @@ class DefaultController extends DtfController
             ->add('username', TextType::class)
             ->add('email', TextType::class)
             ->add('password', PasswordType::class)
+            ->add('repeat_password', PasswordType::class)
             ->add('save', SubmitType::class, ['label' => 'Sign Up'])
             ->getForm();
 

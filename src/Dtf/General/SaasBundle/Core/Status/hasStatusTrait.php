@@ -9,6 +9,7 @@ namespace Dtf\General\SaasBundle\Core\Status;
 trait hasStatusTrait
 {
     /**
+     * The status id
      *
      * @var int
      */
@@ -39,7 +40,7 @@ trait hasStatusTrait
      *
      * @return int
      */
-    public function getStatus() : int
+    public function getStatus()
     {
         return $this->status;
     }
